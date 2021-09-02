@@ -146,12 +146,6 @@
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
           <button type="submit" class="btn btn-primary">Guadar Usuarios</button>
         </div>
-
-        <?php
-          $crearUsuario = new ControladorUsuarios();
-          $crearUsuario -> ctrCrearUsuario();
-        ?>
-
       </form>
 
     </div>
