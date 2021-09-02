@@ -27,7 +27,7 @@
       <!-- Cuerpo de la pagina -->
       <div class="box-body">
 
-        <table class="table table-bordered table-striped">
+        <table class="table table-bordered table-striped dt-responsive tablas">
           <!-- Titulos de la tabla -->
           <thead>
             <tr>

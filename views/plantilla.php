@@ -35,6 +35,10 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
+  <!-- DataTables -->
+  <link rel="stylesheet" href="views/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="views/bower_components/datatables.net-bs/css/responsive.bootstrap.min.css">
+
   <!--=====================================
   PLUGINS DE JAVASCRIPT
   ======================================-->
@@ -50,6 +54,12 @@
   
   <!-- AdminLTE App -->
   <script src="views/dist/js/adminlte.min.js"></script>
+
+  <!-- DataTables -->
+  <script src="views/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="views/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <script src="views/bower_components/datatables.net-bs/js/dataTables.responsive.min.js"></script>
+  <script src="views/bower_components/datatables.net-bs/js/responsive.bootstrap.min.js"></script>
 </head>
 
 <!-- Cuerpo documento -->
