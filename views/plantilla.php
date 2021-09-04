@@ -109,6 +109,7 @@ if (isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok") {
   
 
   <script src="views/js/plantilla.js"></script>
+  <script src="views/js/usuarios.js"></script>
 </body>
 
 </html>
