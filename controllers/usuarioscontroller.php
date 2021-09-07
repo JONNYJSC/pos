@@ -18,9 +18,10 @@ class ControladorUsuarios
                 $item = "usuario";
                 $valor = $_POST["ingUsuario"];
 
-                $respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
+                $respuesta = ModeloUsuarios::mdlMostrarUsuarios($tabla, $item, $valor);
 
                 if ($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar) {
+                    // if ($respuesta["usuario"] == $_POST["ingUsuario"]) {
                     $_SESSION["iniciarSesion"] = "ok";
                     $_SESSION["id"] = $respuesta["id"];
                     $_SESSION["nombre"] = $respuesta["nombre"];
@@ -70,9 +71,9 @@ class ControladorUsuarios
                     $directorio = "views/img/usuarios/".$_POST["nuevoUsuario"];
                     // Permisos de lectura y escritura 0755
                     // mkdir($directorio, 0755);
-                    if (!file_exists($directorio)) {
-                        mkdir($directorio, 0755);
-                    }
+                    //if (!file_exists($directorio)) {
+                    mkdir($directorio, 0755);
+                    //}
 
 
                     /*=============================================
@@ -181,7 +182,7 @@ class ControladorUsuarios
 
                 $ruta = $_POST["fotoActual"];
 
-                if (isset($_FILES["editarFoto"]["tmp_name"])) {
+                if (isset($_FILES["editarFoto"]["tmp_name"]) && !empty($_FILES["editarFoto"]["tmp_name"])) {
                     list($ancho, $alto) = getimagesize($_FILES["editarFoto"]["tmp_name"]);
 
                     $nuevoAncho = 500;
@@ -237,7 +238,7 @@ class ControladorUsuarios
                 }
                 $tabla = "usuarios";
 
-                if ($_POST["editarPassword"]!= "") {
+                if ($_POST["editarPassword"] != "") {
                     if (preg_match('/^[a-zA-Z0-9]+$/', $_POST["editarPassword"])) {
                         $encriptar = crypt($_POST["editarPassword"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
                     } else {
@@ -257,7 +258,7 @@ class ControladorUsuarios
 				            </script>';
                     }
                 } else {
-                    $encriptar = $passwordActual;
+                    $encriptar = $_POST["passwordActual"];
                 }
 
                 $datos = array("nombre" => $_POST["editarNombre"],
