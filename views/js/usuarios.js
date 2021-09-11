@@ -134,3 +134,28 @@ $('#nuevoUsuario').change(function () {
 		},
 	});
 });
+
+// Borrar Usuario
+$('.btnEliminarUsuario').click(function () {
+	var idUsuario = $(this).attr('idUsuario');
+	var fotoUsuario = $(this).attr('fotoUsuario');
+	var usuario = $(this).attr('usuario');
+	swal({
+		title: '¿Está seguro de borrar el usuario?',
+		text: '¡Si no lo está puede cancelar la acción!',
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		cancelButtonText: 'Cancelar',
+		confirmButtonText: 'Si, borrar usuario!',
+	}).then((result) => {
+		window.location =
+			'index.php?ruta=usuarios&idUsuario=' +
+			idUsuario +
+			'&usuario=' +
+			usuario +
+			'fotoUsuario=' +
+			fotoUsuario;
+	});
+});
