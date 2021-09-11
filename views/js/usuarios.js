@@ -149,13 +149,15 @@ $('.btnEliminarUsuario').click(function () {
 		cancelButtonColor: '#d33',
 		cancelButtonText: 'Cancelar',
 		confirmButtonText: 'Si, borrar usuario!',
-	}).then((result) => {
-		window.location =
-			'index.php?ruta=usuarios&idUsuario=' +
-			idUsuario +
-			'&usuario=' +
-			usuario +
-			'fotoUsuario=' +
-			fotoUsuario;
+	}).then(function (result) {
+		if (result.value) {
+			window.location =
+				'index.php?ruta=usuarios&idUsuario=' +
+				idUsuario +
+				'&usuario=' +
+				usuario +
+				'fotoUsuario=' +
+				fotoUsuario;
+		}
 	});
 });
